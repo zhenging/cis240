@@ -2,7 +2,7 @@
 /*
     Zhongyuan Zheng / zhongyuan_zheng@my.cuesta.edu
     CIS 240
-    Chapeter 2 Homework
+    Chapter 2 Homework
 */
 ```
 1\. Explain the similarities between a hay bailer as a engine and a computer ans a engine?
@@ -31,4 +31,4 @@ The program can exist on RAM (Random Access Memory).
 
 6\. What type of memory is the BIOS, and what information is stored on it?
 >Solution
-BIOS(Basic Input Output System) is non-volatile program memory. It sotres the power-on-self-test(POST), the bootstrap code(this brings up the operating system), and a set of device drivers.
+BIOS(Basic Input Output System) is non-volatile program memory. It stores the power-on-self-test(POST), the bootstrap code(this brings up the operating system), and a set of device drivers.
