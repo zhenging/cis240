@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" data-reactroot=""><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><head><title>03 Memory Types</title><link rel="stylesheet" href="/cis240/assets/katex.min_0.9.0.css"/><link rel="stylesheet" href="/cis240/assets/github-markdown_2.10.0.css"/><link rel="stylesheet" href="/cis240/assets/combined.css"/></head><body><header class="header"></header><main class="container"><div class="note-content"><article class="markdown-body"><h3>Chapter 3 Memory Types</h3>
+<h4>Program Memory vs Data Memory</h4>
+<h4>Registers</h4>
+<h4>MOV Instruction and Copying Data From One Location to Another</h4>
+<p>1. <strong>Register move</strong> - From on register to another</p>
+<pre><code>MOV AX,BX       ;copy the contents of BX to AX
+                ;if BX contains 1234 before execution, AX will also equal 1234
+                ;after the instruction is executed by the CPU
+</code></pre>
+<p>2. <strong>Immediate data move</strong> - From Program Memory to an internal register</p>
+<pre><code>MOV AX,1234     ;copy 1234 stored in program memory to the register AX
+</code></pre>
+<p>3. <strong>Direct or Indirect memory moves</strong> - From data memory to an internal register <strong>OR</strong> from an internal register to data memory<br />
+<em>Indirect Move</em></p>
+<pre><code>MOV AX,[BX]     ;this is a indirect move and copies the memory contents
+                ;pointed to by BX into AX
+</code></pre>
+<p><em>Direct Move</em></p>
+<pre><code>MOV AX,[1234]   ;this is a direct move and copies the memory contents
+                ;pointed to by data memory address 1234 into AX
+</code></pre>
+<h4>Address and Data Paths</h4>
+<h4>Types of CPU Buses</h4>
+<h4>MOV Instructions vs. IN and OUT Instruction</h4>
+<h4>Accessing Program Memory and Assembling Programs</h4>
+<h4>The Difference Between Program and Data Memory in PC Memory Devices</h4>
+<h4>Physical Memory Locations</h4>
+<h5>Protected and Long Mode Registers Sets</h5>
 </article></div></main><footer class="note-footer"><div><p>Content written with attitude by @raven. <a href="../">Contact me</a><br />
 Page built with <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>, <a href="https://khan.github.io/KaTeX/">Katex</a>, <a href="https://reactjs.org/">React</a> and <a href="https://webpack.js.org/">webpack</a>.<br />
-Updated at Feb 12, 2019 12:37 AM</p>
+Updated at Mar 19, 2019 12:17 AM</p>
 </div></footer></body></html>

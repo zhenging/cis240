@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-reactroot=""><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><head><title>Ex2 4 2</title><link rel="stylesheet" href="/cis240/assets/katex.min_0.9.0.css"/><link rel="stylesheet" href="/cis240/assets/github-markdown_2.10.0.css"/><link rel="stylesheet" href="/cis240/assets/combined.css"/></head><body><header class="header"></header><main class="container"><div class="note-content"><article class="markdown-body"><pre><code>/*
+    Zhongyuan Zheng / zhongyuan_zheng@my.cuesta.edu
+    CIS 240
+    Exercise 2.4 Part 2
+*/
+</code></pre>
+<pre><code>        DOSSEG                  ; Use Microsoft segment conventions
+        .MODEL  SMALL           ;   conventions and small model
+
+        .STACK  200h            ; Allocate 256-byte stack
+        .DATA
+
+        DataBuffer      DB  100 DUP(?)
+
+        .CODE
+READWRITE       PROC
+        mov     ax,@DATA        ; Load segment location
+        mov     ds,ax           ;   into DS register
+        mov     si,OFFSET DataBuffer   ;point to storage location
+WAITFORLF:
+        mov     ah,1            ;read command
+        int     21h             ; read one char into AL
+        cmp     al,0Dh          ;test for line feed
+        je EXITWAITFORLF        ;if line feed exit loop
+        mov     [si],al         ;save character
+        inc     si              ;point to next char
+        jmp WAITFORLF           ;JMP TO WAITFORLF TOP
+EXITWAITFORLF:
+        mov    bx,OFFSET DataBuffer            ;set base of data tables
+        sub     si,bx           ;find number of entries
+        dec     si
+WRITELOOPTOP:
+        mov     ah,02           ;write command
+        mov     dl,[bx+si]         ;get byte for write command
+        int     21h             ;write to monitor
+        dec     si
+        jns    WRITELOOPTOP    ;JUMP TO WRITELOOPTOP
+        mov     ah,4ch
+        int	21h
+        ret                     ;Return to DEBUG program
+READWRITE       ENDP
+        END
+</code></pre>
+<p><img src="../assets/ex2_4_2.PNG" alt="screenshot" /></p>
+</article></div></main><footer class="note-footer"><div><p>Content written with attitude by @raven. <a href="../">Contact me</a><br />
+Page built with <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>, <a href="https://khan.github.io/KaTeX/">Katex</a>, <a href="https://reactjs.org/">React</a> and <a href="https://webpack.js.org/">webpack</a>.<br />
+Updated at Mar 19, 2019 12:17 AM</p>
+</div></footer></body></html>

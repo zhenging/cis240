@@ -2,12 +2,24 @@
 <html lang="en" data-reactroot=""><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><head><title>03 Homework</title><link rel="stylesheet" href="/cis240/assets/katex.min_0.9.0.css"/><link rel="stylesheet" href="/cis240/assets/github-markdown_2.10.0.css"/><link rel="stylesheet" href="/cis240/assets/combined.css"/></head><body><header class="header"></header><main class="container"><div class="note-content"><article class="markdown-body"><pre><code>/*
     Zhongyuan Zheng / zhongyuan_zheng@my.cuesta.edu
     CIS 240
-    Chapeter 3 Homework
+    Chapter 3 Homework
 */
 </code></pre>
 <p>1. What is the difference between data memory and register memory?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>While the program is running, the CPU is performing computations and needs to store results in temporary storage outside the CPU, this is called <strong>Data memory</strong>. The CPU, however, also has internal storage for both program and data memory, this is called <strong>Register Memory</strong>.</p>
+</div>
 <p>2. What part of the CPU directs the accessing of program memory?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>The program counter.</p>
+</div>
 <p>3. What does the IP register point to?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>IP register points to program memory, in particular it points to the <strong>next instruction</strong> to be executed.</p>
+</div>
 <p>4. Write out the register combination needed to access the following types of memory?</p>
 <div class="named-container-solution">
 <p><strong>Solution</strong></p>
@@ -16,41 +28,94 @@
 <thead>
 <tr>
 <th></th>
-<th>Segment Register:</th>
-<th>Pointer Registers</th>
+<th>Segment Register</th>
+<th>Pointer Register/s</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Program</td>
-<td></td>
-<td></td>
+<td>CS</td>
+<td>IP</td>
 </tr>
 <tr>
 <td>Data</td>
-<td></td>
-<td></td>
+<td>DS</td>
+<td>BP</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>SS</td>
+<td>SP</td>
 </tr>
 </tbody>
 </table>
 <p>5. What are the following types of move?<br />
-Register to register:<br />
-Program memory to register:<br />
-Data memory to register (or register to memory):</p>
+Register to register: <strong>Register Move</strong><br />
+Program memory to register: <strong>Immediate Data Move</strong><br />
+Data memory to register (or register to memory): <strong>Direct of Indirect Move</strong></p>
 <p>6. Write an example of each of the four types?</p>
-<p>7. Write an example of a memory write and a memory read using <em>direct</em> memory access at address 0104h, from and to <strong>AX</strong> data register<br />
-Read:<br />
-Write:</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>Register Move: <code>MOV AX,BX</code><br />
+Immediate Data Move: <code>MOV AX,1234</code><br />
+Direct Move: <code>MOV AX,[1234]</code><br />
+Indirect Move: <code>MOV AX,[BX]</code></p>
+</div>
+<p>7. Write an example of a memory write and a memory read using <em>direct</em> memory access at address 0104h, from and to <strong>AX</strong> data register</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>Read: <code>MOV AX,[0104]</code><br />
+Write: <code>MOV [0104],AX</code></p>
+</div>
 <p>8. Write an example of a memory write and a memory read using <em>indirect</em> memory access using <strong>BP</strong> address register from and to the <strong>AX</strong> data register</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>Read: <code>MOV AX,[BP]</code><br />
+Write: <code>MOV [BP],AX</code></p>
+</div>
 <p>9. What prevents system bus conflicts?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>Todo</p>
+</div>
 <p>10. What is the difference between the <strong>MOV</strong> and <strong>IN/OUT</strong> instructions?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>1. <code>MOV</code> is bi-directional, meaning it can perform both write and read operation. <code>IN/OUT</code> are unidirectional. <code>IN</code> can only perform a device read, and <code>OUT</code> can only perform a device write.<br />
+2. <code>MOV</code> is normally used to access memory devices such as the main memory (RAM), or battery backed RAM (CMOS). <code>IN/OUT</code> are usually used to access hardware devices such as harddisks, floppy drivers, keyboards, serial port items such as modems and mouse, and parallel port items such as printers or scanners.</p>
+</div>
 <p>11. What is the difference between the debug command and a CPU instruction:</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>Todo</p>
+</div>
 <p>12. What seperate program, data, and stack that are all located in <strong>DRAM</strong> memoery?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>Todo</p>
+</div>
 <p>13. When acessing memory what is the function of a segement register and a pointer register?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>The memory can be addressed at the location of segment * 10 + offset (pointer register).</p>
+</div>
 <p>14. List all the registers that are associated with offsets?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p><code>BX, DI, SI, BP, IP, SP</code></p>
+</div>
 <p>15. What is the maximum amount of memory that a 16bit segement and offset register can address?</p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p>From <code>xxxx0 + 0000</code> to <code>xxxx0 + ffff</code>, that is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mn>1</mn><mn>6</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base"><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span> bytes, or <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mn>4</mn></mrow><annotation encoding="application/x-tex">64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base"><span class="mord">6</span><span class="mord">4</span></span></span></span> kilobytes.</p>
+</div>
 <p>16. Calculate the physical address of the data to be accessed if <strong>DS=2300</strong> and <strong>BX=0456</strong></p>
+<div class="named-container-solution">
+<p><strong>Solution</strong></p>
+<p><code>2300 * 10 + 0456 = 23456</code></p>
+</div>
 </article></div></main><footer class="note-footer"><div><p>Content written with attitude by @raven. <a href="../">Contact me</a><br />
 Page built with <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>, <a href="https://khan.github.io/KaTeX/">Katex</a>, <a href="https://reactjs.org/">React</a> and <a href="https://webpack.js.org/">webpack</a>.<br />
-Updated at Feb 12, 2019 12:37 AM</p>
+Updated at Mar 19, 2019 12:17 AM</p>
 </div></footer></body></html>
