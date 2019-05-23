@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-reactroot=""><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><head><title>Ex4 2 1</title><link rel="stylesheet" href="/cis240/assets/katex.min_0.9.0.css"/><link rel="stylesheet" href="/cis240/assets/github-markdown_2.10.0.css"/><link rel="stylesheet" href="/cis240/assets/combined.css"/></head><body><header class="header"></header><main class="container"><div class="note-content"><article class="markdown-body"><pre><code>/*
+    Zhongyuan Zheng / zhongyuan_zheng@my.cuesta.edu
+    CIS 240 / Akelian
+    Exercise 4.2 Part 1
+*/
+</code></pre>
+<h4>Step 1 - Update the overflow hanlder location to offset 300</h4>
+<pre><code>a 100
+
+mov dx, 300
+mov ah, 25
+mov al, 04
+int 21
+int 3
+
+g=100
+</code></pre>
+<h4>Step 2 - Place a message at offset 2000 which will be displayed when overflow is detected.</h4>
+<pre><code>e 073f:2000 'overflow detected by zzy'
+</code></pre>
+<h4>Step 3 - Implement the message display logic at offset 300</h4>
+<pre><code>a 300
+
+push ax
+push bx
+push dx
+mov ax, 0000
+mov bx, 2000
+mov cx, 18
+mov si, 0000
+mov ah, 02
+mov dl, [bx+si]
+int 21
+inc si
+dec cx
+jnz 30f
+pop dx
+pop bx
+pop ax
+int 3
+</code></pre>
+<h4>Step 4 - Put the overflow handler into test</h4>
+<pre><code>a 100
+
+mul bx
+into
+int3
+
+r ax
+8000
+r bx
+a000
+
+g=100
+</code></pre>
+</article></div></main><footer class="note-footer"><div><p>Content written with attitude by @raven. <a href="../">Contact me</a><br />
+Page built with <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>, <a href="https://khan.github.io/KaTeX/">Katex</a>, <a href="https://reactjs.org/">React</a> and <a href="https://webpack.js.org/">webpack</a>.<br />
+Updated at May 22, 2019 11:22 PM</p>
+</div></footer></body></html>

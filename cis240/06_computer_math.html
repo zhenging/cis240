@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-reactroot=""><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><head><title>06 Computer Math</title><link rel="stylesheet" href="/cis240/assets/katex.min_0.9.0.css"/><link rel="stylesheet" href="/cis240/assets/github-markdown_2.10.0.css"/><link rel="stylesheet" href="/cis240/assets/combined.css"/></head><body><header class="header"></header><main class="container"><div class="note-content"><article class="markdown-body"><h3>06 Computer Math</h3>
+<p>Math Operations in the CPU are performed in the Arithmetic and Logic Unit (ALU). The unit contains all the logic to perform add, substract, multiply, and divide as well as AND, OR, and NOT operations(there are many others also).</p>
+<ul>
+<li><strong>Substraction</strong> is adding a negative number.</li>
+<li><strong>Multiplication</strong> is repeated additions.</li>
+<li><strong>Division</strong> is repeateed substraction.</li>
+</ul>
+<h4>Two's Compliment Numbers and Operation</h4>
+<ul>
+<li>Two's compliment is a mathematical operation for finding the negative value of any binary number. If the value is already negative, performing two's compliment will generate the positive value of the number.</li>
+<li>Two's compliment is always performed on a fixed length number, in the case of a 16 bit register, all 16 bits must be included in the calculation.</li>
+<li>Two step operations. First, a NOT operation(called 1's compliment), then add one to the result.</li>
+</ul>
+<p><strong>Examples</strong><br />
+Todo</p>
+<h4>Integer vs. Floating Point Math</h4>
+<h4>Multiplication and Division using Integer Math</h4>
+<h4>Floating Point number calculations</h4>
+<ul>
+<li>
+<p><strong>Normalization</strong><br />
+<em>Normalization</em> is the process of converting binary integer number to a fraction then shifting any remaining leading zeor's out of a binary number.</p>
+</li>
+<li>
+<p>Denormalization</p>
+</li>
+</ul>
+<h4>Implied Decimal Point Computations</h4>
+<h4>Floating Point Examples</h4>
+<p>D. Multiply <code>7.25h * 0C.Ch</code> shown as an unsigned 16 bit normalized result</p>
+<pre><code>725h * CC = 5B17C           # 1. Multiply in hex with out the decimal point
+5B.17C                      # 2. With the Decimal point
+0101 1011. 0001 0111 1100
+ 101 1011. 0001 0111 1100   # 3. Normalization, shifting leading zero out
+ 101 1011. 0001 1000 0      # 4. Rounding the bit 17 (LSB)
+ 1011 0110 0011 0000        # Final Result
+</code></pre>
+<p>E. Show the result of d) in un-normalized binary with an implied decimal point at bit 5 of a 16 bit register</p>
+<pre><code>    0101 1011. 0001 0111 1100
+    0101 1011. 0001 1           # 1. Round the result with 5 bits of fraction
+000 0101 1011. 0001 1           # 2. Shown in a 16 bit register
+0000 1011 0110 0011             # Final Result
+</code></pre>
+<p>F. Multiply <code>101.10101 * 1011.1101</code> With an implied decimal at bit 3 of a 16 bit register</p>
+<pre><code>101.10101 * 1011.1101 = B5 * BD # 1. Convert binary to hex without decimal point
+B5 * BD = 85A1                  # 2. Calculate the hex
+       1000 010.1 1010 0001     # 3. With decimal point at 9^{th} bit
+       1000 010.1 11            # 4. Round the result with 3 bits of fraction
+000000 1000 010.1 11            # 5. Shown in a 16 bit register
+0000 0010 0001 0111             # Final Result
+</code></pre>
+</article></div></main><footer class="note-footer"><div><p>Content written with attitude by @raven. <a href="../">Contact me</a><br />
+Page built with <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>, <a href="https://khan.github.io/KaTeX/">Katex</a>, <a href="https://reactjs.org/">React</a> and <a href="https://webpack.js.org/">webpack</a>.<br />
+Updated at May 22, 2019 11:22 PM</p>
+</div></footer></body></html>

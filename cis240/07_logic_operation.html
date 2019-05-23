@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-reactroot=""><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><head><title>07 Logic Operation</title><link rel="stylesheet" href="/cis240/assets/katex.min_0.9.0.css"/><link rel="stylesheet" href="/cis240/assets/github-markdown_2.10.0.css"/><link rel="stylesheet" href="/cis240/assets/combined.css"/></head><body><header class="header"></header><main class="container"><div class="note-content"><article class="markdown-body"><h3>07 Logic Operation</h3>
+<h4>Bitwise Logic Operations</h4>
+<p>The basic CPU logic operations are AND, OR, XOR, NOT, shift left (SHL), shift right (SHR), rotate left (ROL), and rotate right (ROR).</p>
+<h4>Masking and the AND Operation</h4>
+<ul>
+<li>
+<p>Setting bits high or low</p>
+</li>
+<li>
+<p>The Image Register</p>
+</li>
+</ul>
+<h4>Shift and Rotate Operations</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">16 Bit Register (AX)</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Mov AX, 1</td>
+</tr>
+<tr>
+<td style="text-align:left">0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>SHL AX, 1</td>
+</tr>
+<tr>
+<td style="text-align:left">0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>SHR AX, 1</td>
+</tr>
+<tr>
+<td style="text-align:left">0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>SHR AX, 1</td>
+</tr>
+</tbody>
+</table>
+</article></div></main><footer class="note-footer"><div><p>Content written with attitude by @raven. <a href="../">Contact me</a><br />
+Page built with <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>, <a href="https://khan.github.io/KaTeX/">Katex</a>, <a href="https://reactjs.org/">React</a> and <a href="https://webpack.js.org/">webpack</a>.<br />
+Updated at May 22, 2019 11:22 PM</p>
+</div></footer></body></html>

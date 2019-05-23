@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-reactroot=""><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><head><title>Ex3</title><link rel="stylesheet" href="/cis240/assets/katex.min_0.9.0.css"/><link rel="stylesheet" href="/cis240/assets/github-markdown_2.10.0.css"/><link rel="stylesheet" href="/cis240/assets/combined.css"/></head><body><header class="header"></header><main class="container"><div class="note-content"><article class="markdown-body"><pre><code>/*
+    Zhongyuan Zheng / zhongyuan_zheng@my.cuesta.edu
+    CIS 240
+    Exercise 3
+*/
+</code></pre>
+<h4>Part 1 <code>AX = (AL/BL) * CL</code></h4>
+<pre><code>DIV BL
+MUL CL
+</code></pre>
+<h4>Part 2 <code>AX = (AL/BL) * CL</code></h4>
+<pre><code># Step 1
+AL/BL = AL + AH/BL
+# Step 2:
+(AL/BL) * CL = AL * CL + (AH/BL) * CL
+             = AX * CL + (AH*CL) / BL
+</code></pre>
+<pre><code>DIV BL
+MOV DL, AL
+MOV AL, AH
+MUL CL
+DIV BL
+MOV DH, AL
+MOV AL, DL
+MUL CL
+ADD AL, DH
+</code></pre>
+<h4>Part 3 <code>AX = (AX/BX) * CX</code></h4>
+<pre><code># Step 1
+AX/BX = AX + DX/BX
+# Step 2:
+(AX/BX) * CX = AX * CX + (DX/BX) * CX
+             = AX * CX + (DX * CX) / BX
+</code></pre>
+<pre><code>DIV BX
+MOV SI, AX
+MOV AX, DX
+MUL CX
+DIV BX
+MOV DI, AX
+MOV AX, SI
+MUL CX
+ADD AX, DI
+</code></pre>
+</article></div></main><footer class="note-footer"><div><p>Content written with attitude by @raven. <a href="../">Contact me</a><br />
+Page built with <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>, <a href="https://khan.github.io/KaTeX/">Katex</a>, <a href="https://reactjs.org/">React</a> and <a href="https://webpack.js.org/">webpack</a>.<br />
+Updated at May 22, 2019 11:22 PM</p>
+</div></footer></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-reactroot=""><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><head><title>08 Jumps and Flags</title><link rel="stylesheet" href="/cis240/assets/katex.min_0.9.0.css"/><link rel="stylesheet" href="/cis240/assets/github-markdown_2.10.0.css"/><link rel="stylesheet" href="/cis240/assets/combined.css"/></head><body><header class="header"></header><main class="container"><div class="note-content"><article class="markdown-body"><h3>08 Jumps, Flags, and Decision Making Logic</h3>
+<h4>Jump</h4>
+<p>Unconditional Jump</p>
+<p>Conditional Jump</p>
+<h4>Flag States</h4>
+<p>Flags are binary values either 1 or 0 stored in a register inside the CPU. The register is called the <em>status register</em> since the flags represent the current status of the CPU.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Function</th>
+<th>States (Name and binary value)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SF - Sign Flag</td>
+<td>Detects if sign bit is set. This is the MSB of a register.</td>
+<td>PL (Positive Level) = 0 <br>NG (Negative Level) = 1</td>
+</tr>
+<tr>
+<td>CF - Carry Flag</td>
+<td>Used in register math, Carry out MSB of register (during add) or Borrow into LSB of register (during substrcts)</td>
+<td>NC (No Carry) = 0 <br> CY (Carry) = 1</td>
+</tr>
+<tr>
+<td>OF - Overflow Flag</td>
+<td>For signed number math indicates that adding two large positive numbers set the sign bit (reversing the polarity)</td>
+<td>NV (Not Overflow) = 0 <br> OV(Overflow) = 1</td>
+</tr>
+<tr>
+<td>ZF - Zero Flag</td>
+<td>When set, indicates last operation caused a register to equal zero</td>
+<td>NZ (Not Zero) = 0 <br> ZR(Zero) = 1</td>
+</tr>
+</tbody>
+</table>
+<h4>ADD32</h4>
+<h4>SUB32</h4>
+<h4>Making Comparisons Using the Compare (CMP) instruction</h4>
+<h4>CMP vs TEST instruction</h4>
+<h4>Structure Coding Using Assembly Language</h4>
+<h4>Relating Assembly Language Code to High Level Language</h4>
+</article></div></main><footer class="note-footer"><div><p>Content written with attitude by @raven. <a href="../">Contact me</a><br />
+Page built with <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>, <a href="https://khan.github.io/KaTeX/">Katex</a>, <a href="https://reactjs.org/">React</a> and <a href="https://webpack.js.org/">webpack</a>.<br />
+Updated at May 22, 2019 11:22 PM</p>
+</div></footer></body></html>
